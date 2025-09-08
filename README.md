@@ -96,6 +96,7 @@ aorta/
 └── aorta_unet_model.h5       # Trained U-Net model
 ```
 
+```
 M2S/              
 ├── patient-001/
 │   ├── 0.dcm
@@ -105,7 +106,7 @@ M2S/
 │   ├── 0.dcm
 │   ├── 1.dcm
 │   └── ...
-
+```
 ## 🔧 Model Components
 
 ### 1. U-Net Aorta Localization
