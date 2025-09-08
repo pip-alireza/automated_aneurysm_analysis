@@ -111,12 +111,11 @@ M2S/
 
 ### 1. U-Net Aorta Localization
 - Identifies aorta coordinates in CT slices
-- Filters slices with sufficient segmented pixels (threshold: 600)
+- Filters slices with sufficient segmented pixels
 - Outputs center coordinates for SAM2 initialization
 
 ### 2. SAM2 Video Segmentation
-- Uses SAM2's video prediction capabilities
-- Tracks aortic regions across sequential CT slices
+- Uses Unet's outputs center coordinates to track aorta through aneurysm
 - Implements retry mechanism for robust segmentation
 
 ### 3. Boundary Detection Methods
@@ -124,11 +123,11 @@ M2S/
 #### Expert System Approach
 - Rule-based detection using pixel count analysis
 - Window-based comparison for abnormality detection
-- Identifies regions with 20% increase/decrease in segmentation
+- Identifies regions with percentage increase/decrease in segmentation
 
 #### LSTM Approach
 - Deep learning model with bidirectional LSTM layers
-- Input: Sequential segmented pixel counts (200 frames)
+- Input: Sequential segmented pixel counts 
 - Output: Binary mask indicating aneurysm boundaries
 - Architecture: Input LSTM → FC layers → Output LSTM → Sigmoid
 
