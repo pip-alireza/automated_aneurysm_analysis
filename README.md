@@ -1,4 +1,4 @@
-# Aortic Aneurysm Analysis
+## Aortic Aneurysm Analysis
 
 This repository contains the implementation code for our published research on automated aortic aneurysm detection and volume estimation using deep learning approaches.
 
@@ -61,45 +61,28 @@ This work builds upon Meta's SAM2 foundation model to create a specialized pipel
 
 ### Usage
 
-The main functionality is provided in the Jupyter notebook `sam2/notebooks/aneurysm.ipynb`. This notebook contains the complete pipeline:
+**All code is available in**: `aneurysm analysis/notebooks/aneurysm.ipynb`
 
-1. **Aorta Coordinate Detection** (Cell 1)
-2. **SAM2 Video Tracking** (Cell 3)  
-3. **LSTM Boundary Detection** (Cells 5-11)
-4. **Expert System Analysis** (Cell 13)
-5. **Performance Evaluation** (Cells 15-17)
+This notebook contains the complete implementation including:
+- U-Net for aorta localization
+- SAM2 video tracking  
+- LSTM and Expert System for boundary detection
+- Performance evaluation and visualization
 
-#### Running the Analysis
+**Pretrained U-Net Model**: For the trained U-Net model file, contact: `alirezab@email.sc.edu`
 
-1. **Prepare your data structure:**
-   ```
-   your_data_folder/
-   ├── M2S/                    # DICOM files organized by patient
-   │   ├── patient-id-101/     # Patient folders ending with "101"
-   │   │   ├── slice001.dcm
-   │   │   ├── slice002.dcm
-   │   │   └── ...
-   └── aneurysm_jpg/          # Converted JPG images
-       ├── patient-id/
-       │   ├── 0.jpg
-       │   ├── 1.jpg
-       │   └── ...
-   ```
+## 🔧 Pipeline Overview
 
-2. **Update paths in the notebook:**
-   ```python
-   # Update these paths in the notebook cells
-   root_folder = "your_data_folder/M2S"
-   root_dir = "your_data_folder/aneurysm_jpg"
-   model_path = 'path_to_your_unet_model.h5'
-   ```
+1. **U-Net**: Locates aorta coordinates in CT slices
+2. **SAM2**: Tracks aortic regions across sequential slices  
+3. **Boundary Detection**: Expert system and LSTM approaches
+4. **Evaluation**: Cross-validation and correlation analysis
 
-3. **Run the notebook cells sequentially** to execute the complete pipeline.
+## 🏥 Applications
 
 ### Example Data Structure
 
-Based on the example data location (`alireza@beast:~/Desktop/aorta/`), your data should be organized as:
-
+data structure follows like:
 ```
 aorta/
 ├── aneurysm_jpg/              # JPG converted CT slices
@@ -112,6 +95,16 @@ aorta/
 ├── sam2_pred/                 # SAM2 prediction outputs
 └── aorta_unet_model.h5       # Trained U-Net model
 ```
+
+M2S/              
+├── patient-001/
+│   ├── 0.dcm
+│   ├── 1.dcm
+│   └── ...
+├── patient-002/
+│   ├── 0.dcm
+│   ├── 1.dcm
+│   └── ...
 
 ## 🔧 Model Components
 
@@ -147,29 +140,6 @@ The repository includes comprehensive evaluation tools:
 - **Boundary Accuracy**: Start/end position comparison
 - **Volume Analysis**: Segmented pixel volume correlation
 
-## 📁 Repository Structure
-
-```
-Sam2-Repository/
-├── README.md                  # This file
-└── sam2/
-    ├── notebooks/
-    │   └── aneurysm.ipynb     # Main analysis notebook
-    ├── checkpoints/
-    │   ├── download_ckpts.sh  # Checkpoint download script
-    │   └── sam2_hiera_large.pt # Required model checkpoint
-    ├── sam2/                  # Core SAM2 source code
-    │   ├── build_sam.py       # Model builder
-    │   ├── configs/sam2/      # Model configurations
-    │   ├── modeling/          # Model architecture
-    │   ├── sam2_video_predictor.py # Video predictor (main dependency)
-    │   └── utils/             # Utility functions
-    ├── LICENSE                # Apache 2.0 license
-    ├── LICENSE_cctorch       # Third-party license
-    └── README.md             # Original SAM2 documentation
-```
-
-## 🏥 Medical Applications
 
 This pipeline is designed for:
 
@@ -229,24 +199,6 @@ This project respects the licensing terms of its dependencies:
 - **Connected Components (`cc_torch`)**: BSD 3-Clause License (see `LICENSE_cctorch`)
 - **This Project's Modifications**: Please specify your preferred license for the medical imaging adaptations
 
-## 🤝 Contributing
-
-We welcome contributions to improve the medical imaging applications of SAM2. Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request with detailed description
-
-## 📞 Support
-
-For questions about:
-- **SAM2 Core Functionality**: Refer to the [original SAM2 repository](https://github.com/facebookresearch/segment-anything-2)
-- **Medical Imaging Applications**: Open an issue in this repository
-
 ## ⚠️ Disclaimer
 
-This software is for research purposes only and has not been approved for clinical use. Always consult with qualified medical professionals for medical decisions.
-
----
-
-**Note**: This project demonstrates the adaptation of foundation models like SAM2 for specialized medical imaging tasks. The combination of traditional computer vision techniques with modern foundation models shows promising results for automated medical image analysis.
+This software is for research purposes only and has not been approved for clinical use.
