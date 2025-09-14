@@ -11,7 +11,7 @@ This repository adapts Meta's **Segment Anything Model 2 (SAM2)** for medical im
 This work creates an unique pipeline for aortic aneurysm analysis:
 
 1. **U-Net Aorta Localization**: Uses a trained U-Net model to identify aorta coordinates in CT slices
-2. **SAM2 Video Tracking**: Applies SAM2's video segmentation capabilities to track aortic regions across sequential CT slices
+2. **SAM2 Video Tracking**: Applies SAM2's video segmentation capabilities to track aortic across aneurysm region.
 3. **Automated Boundary Detection**: Implements both expert systems and LSTM-based approaches to identify aneurysm boundaries
 4. **Comprehensive Evaluation**: Provides comparison tools between automated methods and human annotations
 
@@ -168,11 +168,10 @@ If you use this code in your research, please cite our paper:
 
 ## Acknowledgments
 
-This project used **Segment Anything Model 2 (SAM2)** developed by Meta's FAIR team:
+This project used **Segment Anything Model 2 (SAM2)** developed by Meta's team:
 
 - **Original Repository**: [facebookresearch/segment-anything-2](https://github.com/facebookresearch/segment-anything-2)
 - **Paper**: [SAM 2: Segment Anything in Images and Videos](https://ai.meta.com/research/publications/sam-2-segment-anything-in-images-and-videos/)
-- **Authors**: Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, and many others at Meta AI
 
 **Citation for SAM2:**
 ```bibtex
