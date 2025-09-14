@@ -173,17 +173,6 @@ This project used **Segment Anything Model 2 (SAM2)** developed by Meta's team:
 - **Original Repository**: [facebookresearch/segment-anything-2](https://github.com/facebookresearch/segment-anything-2)
 - **Paper**: [SAM 2: Segment Anything in Images and Videos](https://ai.meta.com/research/publications/sam-2-segment-anything-in-images-and-videos/)
 
-**Citation for SAM2:**
-```bibtex
-@article{ravi2024sam2,
-  title={SAM 2: Segment Anything in Images and Videos},
-  author={Ravi, Nikhila and Gabeur, Valentin and Hu, Yuan-Ting and Hu, Ronghang and Ryali, Chaitanya and Ma, Tengyu and Khedr, Haitham and R{\"a}dle, Roman and Rolland, Chloe and Gustafson, Laura and Mintun, Eric and Pan, Junting and Alwala, Kalyan Vasudev and Carion, Nicolas and Wu, Chao-Yuan and Girshick, Ross and Doll{\'a}r, Piotr and Feichtenhofer, Christoph},
-  journal={arXiv preprint arXiv:2408.00714},
-  url={https://arxiv.org/abs/2408.00714},
-  year={2024}
-}
-```
-
 ### Third-Party Components
 
 - **Connected Components**: GPU-based algorithm adapted from [`cc_torch`](https://github.com/zsef123/Connected_components_PyTorch) (BSD 3-Clause License)
