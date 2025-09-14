@@ -8,7 +8,7 @@ This repository adapts Meta's **Segment Anything Model 2 (SAM2)** for medical im
 
 ## 🔬 About This Project
 
-This work create a specialized pipeline for aortic aneurysm analysis:
+This work creates an unique pipeline for aortic aneurysm analysis:
 
 1. **U-Net Aorta Localization**: Uses a trained U-Net model to identify aorta coordinates in CT slices
 2. **SAM2 Video Tracking**: Applies SAM2's video segmentation capabilities to track aortic regions across sequential CT slices
