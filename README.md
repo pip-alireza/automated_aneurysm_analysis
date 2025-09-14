@@ -183,7 +183,6 @@ This project respects the licensing terms of its dependencies:
 
 - **SAM2 Components**: Licensed under [Apache 2.0](https://github.com/facebookresearch/segment-anything-2/blob/main/LICENSE)
 - **Connected Components (`cc_torch`)**: BSD 3-Clause License (see `LICENSE_cctorch`)
-- **This Project's Modifications**: Please specify your preferred license for the medical imaging adaptations
 
 ## ⚠️ Disclaimer
 
